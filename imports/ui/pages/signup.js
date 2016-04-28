@@ -15,7 +15,7 @@ export class Signup extends React.Component {
   render() {
     return <Row>
       <Col xs={ 12 } sm={ 6 } md={ 4 }>
-        <h4 className="page-header">Sign Up</h4>
+        <h4 className="page-header">Registrieren</h4>
         <form ref="signup" className="signup" onSubmit={ this.handleSubmit }>
           <Row>
             <Col xs={ 6 } sm={ 6 }>
@@ -24,7 +24,7 @@ export class Signup extends React.Component {
                 label="First Name"
                 ref="firstName"
                 name="firstName"
-                placeholder="First Name"
+                placeholder="Vorname"
               />
             </Col>
             <Col xs={ 6 } sm={ 6 }>
@@ -33,7 +33,7 @@ export class Signup extends React.Component {
                 label="Last Name"
                 ref="lastName"
                 name="lastName"
-                placeholder="Last Name"
+                placeholder="Nachname"
               />
             </Col>
           </Row>
@@ -42,18 +42,18 @@ export class Signup extends React.Component {
             label="Email Address"
             ref="emailAddress"
             name="emailAddress"
-            placeholder="Email Address"
+            placeholder="Email Addresse"
           />
           <Input
             type="password"
             label="Password"
             ref="password"
             name="password"
-            placeholder="Password"
+            placeholder="Passwort"
           />
-          <Button type="submit" bsStyle="success">Sign Up</Button>
+          <Button type="submit" bsStyle="success">Registrieren</Button>
         </form>
-        <p>Already have an account? <Link to="/login">Log In</Link>.</p>
+        <p>Account bereits erstellt? <Link to="/login">Anmelden</Link>.</p>
       </Col>
     </Row>;
   }

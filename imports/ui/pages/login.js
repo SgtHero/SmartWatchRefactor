@@ -15,29 +15,29 @@ export class Login extends React.Component {
   render() {
     return <Row>
       <Col xs={ 12 } sm={ 6 } md={ 4 }>
-        <h4 className="page-header">Login</h4>
+        <h4 className="page-header">Anmelden</h4>
         <form ref="login" className="login" onSubmit={ this.handleSubmit }>
           <Input
             type="email"
             label="Email Address"
             ref="emailAddress"
             name="emailAddress"
-            placeholder="Email Address"
+            placeholder="Email Addresse"
           />
           <div className="form-group">
             <label htmlFor="password">
-              <span className="pull-left">Password</span>
-              <Link className="pull-right" to="/recover-password">Forgot Password?</Link>
+              <span className="pull-left">Passwort</span>
+              <Link className="pull-right" to="/recover-password">Passwort vergessen?</Link>
             </label>
             <input
               type="password"
               className="form-control"
               ref="password"
               name="password"
-              placeholder="Password"
+              placeholder="Passwort"
             />
           </div>
-          <Button type="submit" bsStyle="success">Login</Button>
+          <Button type="submit" bsStyle="success">Anmelden</Button>
         </form>
       </Col>
     </Row>;

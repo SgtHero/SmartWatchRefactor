@@ -19,8 +19,7 @@ export class ResetPassword extends React.Component {
       <Col xs={ 12 } sm={ 6 } md={ 4 }>
         <h4 className="page-header">Reset Password</h4>
         <Alert bsStyle="info">
-          To reset your password, enter a new one below. You will be logged in
-with your new password.
+          Um ein Passwort zurückzusetzen, einfach ein neues hier eintragen und abschicken
         </Alert>
         <form ref="resetPassword" className="reset-password" onSubmit={ this.handleSubmit }>
           <Input
@@ -28,16 +27,16 @@ with your new password.
             type="password"
             ref="newPassword"
             name="newPassword"
-            placeholder="New Password"
+            placeholder="Neues Passwort"
           />
           <Input
             label="Repeat New Password"
             type="password"
             ref="repeatNewPassword"
             name="repeatNewPassword"
-            placeholder="Repeat New Password"
+            placeholder="Wiederhole neues Passwort"
           />
-          <Button type="submit" bsStyle="success">Reset Password &amp; Login</Button>
+          <Button type="submit" bsStyle="success">Passwort zurücksetzen &amp; Anmelden</Button>
         </form>
       </Col>
     </Row>;

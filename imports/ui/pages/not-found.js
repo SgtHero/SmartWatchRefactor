@@ -3,6 +3,6 @@ import { Alert } from 'react-bootstrap';
 
 export const NotFound = () => (
   <Alert bsStyle="danger">
-    <p><strong>Error [404]</strong>: { window.location.pathname } does not exist.</p>
+    <p><strong>Fehler [404]</strong>: { window.location.pathname } existiert nicht.</p>
   </Alert>
 );
