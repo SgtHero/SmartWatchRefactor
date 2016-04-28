@@ -21,7 +21,7 @@ export class Signup extends React.Component {
             <Col xs={ 6 } sm={ 6 }>
               <Input
                 type="text"
-                label="First Name"
+                label="Vorname"
                 ref="firstName"
                 name="firstName"
                 placeholder="Vorname"
@@ -30,7 +30,7 @@ export class Signup extends React.Component {
             <Col xs={ 6 } sm={ 6 }>
               <Input
                 type="text"
-                label="Last Name"
+                label="Nachname"
                 ref="lastName"
                 name="lastName"
                 placeholder="Nachname"
@@ -39,14 +39,14 @@ export class Signup extends React.Component {
           </Row>
           <Input
             type="email"
-            label="Email Address"
+            label="Email Addresse"
             ref="emailAddress"
             name="emailAddress"
             placeholder="Email Addresse"
           />
           <Input
             type="password"
-            label="Password"
+            label="Passwort"
             ref="password"
             name="password"
             placeholder="Passwort"

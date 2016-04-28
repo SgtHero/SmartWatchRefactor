@@ -6,7 +6,7 @@ import { AddDocument } from '../components/add-document.js';
 export const Documents = () => (
   <Row>
     <Col xs={ 12 }>
-      <h4 className="page-header">Documents</h4>
+      <h4 className="page-header">Dokumente</h4>
       <AddDocument />
       <DocumentsList />
     </Col>

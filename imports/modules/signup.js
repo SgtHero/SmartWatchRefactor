@@ -24,7 +24,7 @@ const _handleSignup = () => {
       Bert.alert(error.reason, 'danger');
     } else {
       browserHistory.push('/');
-      Bert.alert('Welcome!', 'success');
+      Bert.alert('Willkommen!', 'success');
     }
   });
 };

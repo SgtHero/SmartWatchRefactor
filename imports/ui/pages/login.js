@@ -19,7 +19,7 @@ export class Login extends React.Component {
         <form ref="login" className="login" onSubmit={ this.handleSubmit }>
           <Input
             type="email"
-            label="Email Address"
+            label="Email Addresse"
             ref="emailAddress"
             name="emailAddress"
             placeholder="Email Addresse"
