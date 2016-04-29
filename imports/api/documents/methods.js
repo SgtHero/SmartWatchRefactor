@@ -4,6 +4,7 @@ export const insertPatient = new ValidatedMethod({
   name: 'patients.insert',
   validate: new SimpleSchema({
     title: { type: String },
+    lastName: {type: String}
   }).validator(),
   run(patient) {
     Patients.insert(patient);

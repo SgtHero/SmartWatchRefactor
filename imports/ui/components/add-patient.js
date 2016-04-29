@@ -1,29 +1,38 @@
 import React from 'react';
-import { Input } from 'react-bootstrap';
-import { insertPatient } from '../../api/documents/methods.js';
+//import {Input, Row, Col} from 'react-bootstrap';
 
-const handleInsertPatient = (event) => {
-  const target = event.target;
-  const title = target.value.trim();
+import {insertPatient} from '../../api/documents/methods.js';
 
-  if (title !== '' && event.keyCode === 13) {
-    insertPatient.call({
-      title,
-    }, (error) => {
-      if (error) {
-        Bert.alert(error.reason, 'danger');
-      } else {
-        target.value = '';
-        Bert.alert('Patient hinzugefügt!', 'success');
-      }
-    });
+class AddPatient extends React.Component {
+  handleInsertPatient(event) {
+    event.preventDefault();
+    var title = this.refs.firstName.value;
+
+    if (title !== '' ) {
+      insertPatient.call({
+        title,
+      }, (error) => {
+        if (error) {
+          Bert.alert(error.reason, 'danger');
+        } else {
+          target.value = '';
+          Bert.alert('Patient hinzugefügt!', 'success');
+        }
+      });
+    }
   }
-};
 
-export const AddPatient = () => (
-  <Input
-    type="text"
-    onKeyUp={ handleInsertPatient }
-    placeholder="Patient eintragen und mit Enter bestätigen"
-  />
-);
+  render() {
+    return (
+      <form ref="patientForm" onSubmit={this.handleInsertPatient.bind(this)}>
+        <input
+          type="text"
+          ref="firstName"
+          placeholder="Vorname"/>
+        <button type="submit">Patient hinzufügen</button>
+      </form>
+    );
+  }
+}
+
+export default AddPatient;
