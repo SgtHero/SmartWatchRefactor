@@ -14,13 +14,13 @@ const handleInsertDocument = (event) => {
         Bert.alert(error.reason, 'danger');
       } else {
         target.value = '';
-        Bert.alert('Document added!', 'success');
+        Bert.alert('Patient added!', 'success');
       }
     });
   }
 };
 
-export const AddDocument = () => (
+export const AddPatient = () => (
   <Input
     type="text"
     onKeyUp={ handleInsertDocument }

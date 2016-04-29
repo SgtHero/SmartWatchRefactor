@@ -1,3 +1,3 @@
-import { Documents } from '../documents';
+import { Patients } from '../patients';
 
-Meteor.publish('documents', () => Documents.find());
+Meteor.publish('patients', () => Patients.find());

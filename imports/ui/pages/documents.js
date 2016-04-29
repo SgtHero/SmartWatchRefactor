@@ -1,14 +1,14 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import DocumentsList from '../containers/documents-list.js';
-import { AddDocument } from '../components/add-document.js';
+import PatientsList from '../containers/patients-list.js';
+import { AddPatient } from '../components/add-document.js';
 
 export const Documents = () => (
   <Row>
     <Col xs={ 12 }>
-      <h4 className="page-header">Dokumente</h4>
-      <AddDocument />
-      <DocumentsList />
+      <h4 className="page-header">Patienten</h4>
+      <AddPatient />
+      <PatientsList />
     </Col>
   </Row>
 );

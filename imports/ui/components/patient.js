@@ -2,11 +2,11 @@ import React from 'react';
 import { Row, Col, ListGroupItem, Input, Button } from 'react-bootstrap';
 import { updateDocument, removeDocument } from '../../api/documents/methods.js';
 
-const handleUpdateDocument = (documentId, event) => {
+const handleUpdateDocument = (patientId, event) => {
   const title = event.target.value.trim();
   if (title !== '' && event.keyCode === 13) {
     updateDocument.call({
-      _id: documentId,
+      _id: patientId,
       update: { title },
     }, (error) => {
       if (error) {
@@ -18,11 +18,11 @@ const handleUpdateDocument = (documentId, event) => {
   }
 };
 
-const handleRemoveDocument = (documentId, event) => {
+const handleRemoveDocument = (patientId, event) => {
   event.preventDefault();
   if (confirm('Sind Sie sicher? Die Aktion ist permanent')) {
     removeDocument.call({
-      _id: documentId,
+      _id: patientId,
     }, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger');
@@ -33,22 +33,22 @@ const handleRemoveDocument = (documentId, event) => {
   }
 };
 
-export const Document = ({ document }) => (
-  <ListGroupItem key={ document._id }>
+export const Patient = ({ patient }) => (
+  <ListGroupItem key={ patient._id }>
     <Row>
       <Col xs={ 8 } sm={ 10 }>
         <Input
           type="text"
           standalone
-          defaultValue={ document.title }
-          onKeyUp={ handleUpdateDocument.bind(this, document._id) }
+          defaultValue={ patient.title }
+          onKeyUp={ handleUpdateDocument.bind(this, patient._id) }
         />
       </Col>
       <Col xs={ 4 } sm={ 2 }>
         <Button
           bsStyle="danger"
           className="btn-block"
-          onClick={ handleRemoveDocument.bind(this, document._id) }>
+          onClick={ handleRemoveDocument.bind(this, patient._id) }>
           Entfernen
         </Button>
       </Col>

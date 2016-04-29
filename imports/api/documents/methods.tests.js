@@ -3,23 +3,23 @@
 
 import { assert } from 'meteor/practicalmeteor:chai';
 import { resetDatabase } from 'meteor/xolvio:cleaner';
-import { Documents } from './documents.js';
+import { Patients } from './patients.js';
 import { insertDocument, updateDocument, removeDocument } from './methods.js';
 
-describe('Documents methods', function () {
+describe('Patients methods', function () {
   beforeEach(function () {
     if (Meteor.isServer) {
       resetDatabase();
     }
   });
 
-  it('inserts a document into the Documents collection', function () {
+  it('inserts a document into the Patients collection', function () {
     insertDocument.call({ title: 'You can\'t arrest me, I\'m the Cake Boss!' });
-    const getDocument = Documents.findOne({ title: 'You can\'t arrest me, I\'m the Cake Boss!' });
+    const getDocument = Patients.findOne({ title: 'You can\'t arrest me, I\'m the Cake Boss!' });
     assert.equal(getDocument.title, 'You can\'t arrest me, I\'m the Cake Boss!');
   });
 
-  it('updates a document in the Documents collection', function () {
+  it('updates a document in the Patients collection', function () {
     const { _id } = Factory.create('document');
 
     updateDocument.call({
@@ -29,14 +29,14 @@ describe('Documents methods', function () {
       },
     });
 
-    const getDocument = Documents.findOne(_id);
+    const getDocument = Patients.findOne(_id);
     assert.equal(getDocument.title, 'You can\'t arrest me, I\'m the Cake Boss!');
   });
 
-  it('removes a document from the Documents collection', function () {
+  it('removes a document from the Patients collection', function () {
     const { _id } = Factory.create('document');
     removeDocument.call({ _id });
-    const getDocument = Documents.findOne(_id);
+    const getDocument = Patients.findOne(_id);
     assert.equal(getDocument, undefined);
   });
 });

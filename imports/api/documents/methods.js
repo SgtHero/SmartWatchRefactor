@@ -1,12 +1,12 @@
-import { Documents } from './documents';
+import { Patients } from './patients';
 
 export const insertDocument = new ValidatedMethod({
   name: 'documents.insert',
   validate: new SimpleSchema({
     title: { type: String },
   }).validator(),
-  run(document) {
-    Documents.insert(document);
+  run(patient) {
+    Patients.insert(patient);
   },
 });
 
@@ -17,7 +17,7 @@ export const updateDocument = new ValidatedMethod({
     'update.title': { type: String, optional: true },
   }).validator(),
   run({ _id, update }) {
-    Documents.update(_id, { $set: update });
+    Patients.update(_id, { $set: update });
   },
 });
 
@@ -27,6 +27,6 @@ export const removeDocument = new ValidatedMethod({
     _id: { type: String },
   }).validator(),
   run({ _id }) {
-    Documents.remove(_id);
+    Patients.remove(_id);
   },
 });
