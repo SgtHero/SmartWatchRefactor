@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
 import {App} from '../../ui/layouts/app';
-import {Documents} from '../../ui/pages/documents';
+import {Documents} from '../../ui/pages/patients';
 import {Index} from '../../ui/pages/index';
 import {Login} from '../../ui/pages/login';
 import {NotFound} from '../../ui/pages/not-found';

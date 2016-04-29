@@ -1,11 +1,11 @@
 import React from 'react';
 import { Row, Col, ListGroupItem, Input, Button } from 'react-bootstrap';
-import { updateDocument, removeDocument } from '../../api/documents/methods.js';
+import { updatePatient, removePatient } from '../../api/documents/methods.js';
 
-const handleUpdateDocument = (patientId, event) => {
+const handleUpdatePatient = (patientId, event) => {
   const title = event.target.value.trim();
   if (title !== '' && event.keyCode === 13) {
-    updateDocument.call({
+    updatePatient.call({
       _id: patientId,
       update: { title },
     }, (error) => {
@@ -18,10 +18,10 @@ const handleUpdateDocument = (patientId, event) => {
   }
 };
 
-const handleRemoveDocument = (patientId, event) => {
+const handleRemovePatient = (patientId, event) => {
   event.preventDefault();
   if (confirm('Sind Sie sicher? Die Aktion ist permanent')) {
-    removeDocument.call({
+    removePatient.call({
       _id: patientId,
     }, (error) => {
       if (error) {
@@ -41,14 +41,14 @@ export const Patient = ({ patient }) => (
           type="text"
           standalone
           defaultValue={ patient.title }
-          onKeyUp={ handleUpdateDocument.bind(this, patient._id) }
+          onKeyUp={ handleUpdatePatient.bind(this, patient._id) }
         />
       </Col>
       <Col xs={ 4 } sm={ 2 }>
         <Button
           bsStyle="danger"
           className="btn-block"
-          onClick={ handleRemoveDocument.bind(this, patient._id) }>
+          onClick={ handleRemovePatient.bind(this, patient._id) }>
           Entfernen
         </Button>
       </Col>

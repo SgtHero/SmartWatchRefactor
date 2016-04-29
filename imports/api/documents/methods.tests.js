@@ -4,7 +4,7 @@
 import { assert } from 'meteor/practicalmeteor:chai';
 import { resetDatabase } from 'meteor/xolvio:cleaner';
 import { Patients } from './patients.js';
-import { insertDocument, updateDocument, removeDocument } from './methods.js';
+import { insertPatient, updatePatient, removePatient } from './methods.js';
 
 describe('Patients methods', function () {
   beforeEach(function () {
@@ -14,7 +14,7 @@ describe('Patients methods', function () {
   });
 
   it('inserts a document into the Patients collection', function () {
-    insertDocument.call({ title: 'You can\'t arrest me, I\'m the Cake Boss!' });
+    insertPatient.call({ title: 'You can\'t arrest me, I\'m the Cake Boss!' });
     const getDocument = Patients.findOne({ title: 'You can\'t arrest me, I\'m the Cake Boss!' });
     assert.equal(getDocument.title, 'You can\'t arrest me, I\'m the Cake Boss!');
   });
@@ -22,7 +22,7 @@ describe('Patients methods', function () {
   it('updates a document in the Patients collection', function () {
     const { _id } = Factory.create('document');
 
-    updateDocument.call({
+    updatePatient.call({
       _id,
       update: {
         title: 'You can\'t arrest me, I\'m the Cake Boss!',
@@ -35,7 +35,7 @@ describe('Patients methods', function () {
 
   it('removes a document from the Patients collection', function () {
     const { _id } = Factory.create('document');
-    removeDocument.call({ _id });
+    removePatient.call({ _id });
     const getDocument = Patients.findOne(_id);
     assert.equal(getDocument, undefined);
   });
