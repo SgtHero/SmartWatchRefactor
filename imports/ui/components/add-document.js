@@ -24,6 +24,6 @@ export const AddDocument = () => (
   <Input
     type="text"
     onKeyUp={ handleInsertDocument }
-    placeholder="Type a document title and press enter..."
+    placeholder="Patient eintragen und mit Enter bestätigen"
   />
 );

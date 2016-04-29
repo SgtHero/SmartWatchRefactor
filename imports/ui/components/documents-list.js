@@ -8,7 +8,7 @@ export const DocumentsList = ({ documents }) => (
       <Document key={ doc._id } document={ doc } />
     ))}
   </ListGroup> :
-  <Alert bsStyle="warning">No documents yet.</Alert>
+  <Alert bsStyle="warning">Keine Patienten vorhanden</Alert>
 );
 
 DocumentsList.propTypes = {

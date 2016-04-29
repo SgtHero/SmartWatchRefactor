@@ -12,7 +12,7 @@ const handleUpdateDocument = (documentId, event) => {
       if (error) {
         Bert.alert(error.reason, 'danger');
       } else {
-        Bert.alert('Document updated!', 'success');
+        Bert.alert('Patient aktualisiert!', 'success');
       }
     });
   }
@@ -20,14 +20,14 @@ const handleUpdateDocument = (documentId, event) => {
 
 const handleRemoveDocument = (documentId, event) => {
   event.preventDefault();
-  if (confirm('Are you sure? This is permanent.')) {
+  if (confirm('Sind Sie sicher? Die Aktion ist permanent')) {
     removeDocument.call({
       _id: documentId,
     }, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger');
       } else {
-        Bert.alert('Document removed!', 'success');
+        Bert.alert('Patient gelöscht!', 'success');
       }
     });
   }
@@ -49,7 +49,7 @@ export const Document = ({ document }) => (
           bsStyle="danger"
           className="btn-block"
           onClick={ handleRemoveDocument.bind(this, document._id) }>
-          Remove
+          Entfernen
         </Button>
       </Col>
     </Row>
